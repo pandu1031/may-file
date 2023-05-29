@@ -34,7 +34,7 @@ pipeline{
             steps{
                 println "Deploying artifacts from jenkins server to tomcat "                
                 sh "scp -i /tmp/mamu1031.pem /tmp/tomcatintsallation.sh ec2-user@${SERVER_IP}:/tmp/"
-                sh "ssh -i /tmp/mamu1031.pem ec2-user@${SERVER_IP} \"bash /tmp/tomcatinsatallation.sh\""
+                sh "ssh -i /tmp/mamu1031.pem ec2-user@${SERVER_IP} \"bash /tmp/tomcatintsallation.sh\""
             }
         }
     }
