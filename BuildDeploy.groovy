@@ -32,7 +32,7 @@ pipeline{
         }
         stage("Deploy"){
             steps{
-                println "Deploying artifacts from jenkins server to tomcat "
+                println "Deploying artifacts from jenkins server to tomcat "                
                 sh "scp -i /tmp/mamu1031.pem tomcatintsallation.sh ec2-user@${SERVER_IP}:/tmp/"
             }
         }
