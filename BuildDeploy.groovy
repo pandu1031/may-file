@@ -4,6 +4,7 @@ pipeline{
     parameters {
         string(name:'BRANCH_NAME', defaultValue: 'master', description: 'Enter the source branch name ')
          string(name: 'BUILD_PIPE', defaultValue: '', description: 'Enter the pipeline branch name')
+         string(name: 'SERVER_IP', defaultValue: '', description: 'Enter the server ip')
     }
     stages{
         stage("clone code"){
@@ -27,6 +28,12 @@ pipeline{
                 sh "aws s3 ls"
                 sh "aws s3 ls s3://mamuu"
                 sh "aws s3 cp target/hello-${BUILD_NUMBER}.war s3://mamuu/Dheeraj/${BRANCH_NAME}/${BUILD_NUMBER}"
+            }
+        }
+        stage("Deploy"){
+            steps{
+                println "Deploying artifacts from jenkins server to tomcat "
+                sh "scp -i /tmp/mamu1031.pem tomcatintsallation.sh ec2-user@${SERVER_IP}:/tmp/"
             }
         }
     }
