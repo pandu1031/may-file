@@ -14,7 +14,7 @@ pipeline {
                 println "here im building the code"
                 sh "mvn clean package"
                 sh "ls -l target"
-                echo "Building on agent 'slave1'"
+                echo "Building on agent label 'slave1'"
             }
         }
         stage("uploading artifacts"){
