@@ -35,7 +35,7 @@ pipeline{
                 println "Deploying artifacts from jenkins server to tomcat "                
                 //sh "scp -i /tmp/mamu1031.pem /tmp/tomcatintsallation.sh ec2-user@${SERVER_IP}:/tmp/"
                //sh "ssh -i /tmp/mamu1031.pem ec2-user@${SERVER_IP} \"bash /tmp/tomcatintsallation.sh\""
-               sh "scp -i /tmp/mamu1031.pem target/hello-${BUILD_NUMBER}.war ec2-user@${SERVER_IP}:/var/lib/tomcat/webapps/"
+               sh "scp -i /tmp/devops23.pem target/hello-${BUILD_NUMBER}.war ec2-user@${SERVER_IP}: /var/lib/tomcat/webapps/"
             }
         }
     }
