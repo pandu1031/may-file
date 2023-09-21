@@ -2,7 +2,8 @@ pipeline {
     agent { label 'slave1' } 
      parameters {
         string(name:'BRANCH_NAME', defaultValue: '', description: 'Enter the source branch name ')
-         string(name: 'BUILD_NUMBER', defaultValue: '', description: 'Enter the pipeline branch name')
+        string(name:'BRANCH_NAME', defaultValue: '', description: 'Enter the pipeline branch name ')
+         //string(name: 'BUILD_NUMBER', defaultValue: '', description: 'Enter the build number')
      }
     stages {
         stage("clone code"){
