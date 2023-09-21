@@ -4,7 +4,7 @@ pipeline {
         stage("clone code"){
             steps{
                 println "Here im cloning the code from github"
-                git branch: '$BRANCH_NAME',
+                git branch: 'master',
                       url: 'https://github.com/pandu1031/boxfuse-sample-java-war-hello.git'
 
             }
