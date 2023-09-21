@@ -21,8 +21,8 @@ pipeline {
             steps{
                 println "here im uploading artifacts to s3 bucket"
                 sh "aws s3 ls"
-                sh "aws s3 ls s3://mamuu"
-                sh "aws s3 cp target/hello-${BUILD_NUMBER}.war s3://mamuu/Dheeraj/${BRANCH_NAME}/${BUILD_NUMBER}"
+                sh "aws s3 ls s3://mammuu"
+                sh "aws s3 cp target/hello-${BUILD_NUMBER}.war s3://mammuu/Dheeraj/${BRANCH_NAME}/${BUILD_NUMBER}"
             }
         }
     }
